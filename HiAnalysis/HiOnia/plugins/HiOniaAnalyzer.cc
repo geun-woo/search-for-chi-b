@@ -1188,7 +1188,7 @@ void HiOniaAnalyzer::fillTreeJpsi(int iSign, int count) {
     }
 
     TLorentzVector vJpsi = lorentzMomentum(aJpsiCand->p4());
-    new ((*m)[Reco_QQ_size]) TLorentzVector(vJpsi);
+    new((*Reco_QQ_4mom)[Reco_QQ_size])TLorentzVector(vJpsi);
 
     if (_useBS) {
         if (aJpsiCand->hasUserFloat("ppdlBS")) {
