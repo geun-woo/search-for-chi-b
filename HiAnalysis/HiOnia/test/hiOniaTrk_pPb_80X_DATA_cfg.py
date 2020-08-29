@@ -194,7 +194,7 @@ process.hionia = cms.EDAnalyzer('HiOniaAnalyzer',
 
                                 removeSignalEvents = cms.untracked.bool(False),  # Remove/Keep signal events
                                 removeTrueMuons    = cms.untracked.bool(False),  # Remove/Keep gen Muons
-                                storeSameSign      = cms.untracked.bool(True),   # Store/Drop same sign dimuons
+                                storeSameSign      = cms.untracked.bool(False),   # Store/Drop same sign dimuons
 
                                 #-- Gen Details
                                 oniaPDG = cms.int32(553),
@@ -212,7 +212,7 @@ process.hionia = cms.EDAnalyzer('HiOniaAnalyzer',
                                 fillRooDataSet    = cms.bool(False),
                                 fillTree          = cms.bool(True),
                                 fillHistos        = cms.bool(False),
-                                minimumFlag       = cms.bool(False),
+                                minimumFlag       = cms.bool(True),
                                 fillSingleMuons   = cms.bool(True),
                                 fillRecoTracks    = cms.bool(True),
                                 histFileName      = cms.string(options.outputFile),

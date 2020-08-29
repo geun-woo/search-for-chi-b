@@ -964,12 +964,9 @@ void HiOniaAnalyzer::fillTreeMuon(const pat::Muon *muon, int iType,
         Reco_mu_TMOneStaTight[Reco_mu_size] = muon->muonID("TMOneStationTight");
         Reco_mu_nTrkHits[Reco_mu_size] = iTrack->found();
         Reco_mu_normChi2_inner[Reco_mu_size] = iTrack->normalizedChi2();
-        Reco_mu_nPixValHits[Reco_mu_size] =
-            iTrack->hitPattern().numberOfValidPixelHits();
-        Reco_mu_nPixWMea[Reco_mu_size] =
-            iTrack->hitPattern().pixelLayersWithMeasurement();
-        Reco_mu_nTrkWMea[Reco_mu_size] =
-            iTrack->hitPattern().trackerLayersWithMeasurement();
+        Reco_mu_nPixValHits[Reco_mu_size] = iTrack->hitPattern().numberOfValidPixelHits();
+        Reco_mu_nPixWMea[Reco_mu_size] = iTrack->hitPattern().pixelLayersWithMeasurement();
+        Reco_mu_nTrkWMea[Reco_mu_size] = iTrack->hitPattern().trackerLayersWithMeasurement();
         Reco_mu_StationsMatched[Reco_mu_size] = muon->numberOfMatchedStations();
         Reco_mu_dxy[Reco_mu_size] = iTrack->dxy(RefVtx);
         Reco_mu_dxyErr[Reco_mu_size] = iTrack->dxyError();
@@ -1082,10 +1079,8 @@ void HiOniaAnalyzer::fillTreeJpsi(int iSign, int count) {
         else
             Reco_QQ_isCowboy[Reco_QQ_size] = false;
 
-        Reco_QQ_mupl_StationsMatched[Reco_QQ_size] =
-            muon1->numberOfMatchedStations();
-        Reco_QQ_mumi_StationsMatched[Reco_QQ_size] =
-            muon2->numberOfMatchedStations();
+        Reco_QQ_mupl_StationsMatched[Reco_QQ_size] = muon1->numberOfMatchedStations();
+        Reco_QQ_mumi_StationsMatched[Reco_QQ_size] = muon2->numberOfMatchedStations();
 
         Reco_QQ_mupl_isGoodMuon[Reco_QQ_size] = muon::isGoodMuon(*muon1, muon::TMOneStationTight);
         Reco_QQ_mumi_isGoodMuon[Reco_QQ_size] = muon::isGoodMuon(*muon2, muon::TMOneStationTight);
@@ -1140,26 +1135,16 @@ void HiOniaAnalyzer::fillTreeJpsi(int iSign, int count) {
     if (!_theMinimumFlag) {
         Reco_QQ_mupl_nTrkHits[Reco_QQ_size] = iTrack_mupl->found();
         Reco_QQ_mumi_nTrkHits[Reco_QQ_size] = iTrack_mumi->found();
-        Reco_QQ_mupl_highPurity[Reco_QQ_size] =
-            iTrack_mupl->quality(reco::TrackBase::highPurity);
-        Reco_QQ_mumi_highPurity[Reco_QQ_size] =
-            iTrack_mumi->quality(reco::TrackBase::highPurity);
-        Reco_QQ_mupl_normChi2_inner[Reco_QQ_size] =
-            iTrack_mupl->normalizedChi2();
-        Reco_QQ_mumi_normChi2_inner[Reco_QQ_size] =
-            iTrack_mumi->normalizedChi2();
-        Reco_QQ_mupl_nPixValHits[Reco_QQ_size] =
-            iTrack_mupl->hitPattern().numberOfValidPixelHits();
-        Reco_QQ_mumi_nPixValHits[Reco_QQ_size] =
-            iTrack_mumi->hitPattern().numberOfValidPixelHits();
-        Reco_QQ_mupl_nPixWMea[Reco_QQ_size] =
-            iTrack_mupl->hitPattern().pixelLayersWithMeasurement();
-        Reco_QQ_mumi_nPixWMea[Reco_QQ_size] =
-            iTrack_mumi->hitPattern().pixelLayersWithMeasurement();
-        Reco_QQ_mupl_nTrkWMea[Reco_QQ_size] =
-            iTrack_mupl->hitPattern().trackerLayersWithMeasurement();
-        Reco_QQ_mumi_nTrkWMea[Reco_QQ_size] =
-            iTrack_mumi->hitPattern().trackerLayersWithMeasurement();
+        Reco_QQ_mupl_highPurity[Reco_QQ_size] = iTrack_mupl->quality(reco::TrackBase::highPurity);
+        Reco_QQ_mumi_highPurity[Reco_QQ_size] = iTrack_mumi->quality(reco::TrackBase::highPurity);
+        Reco_QQ_mupl_normChi2_inner[Reco_QQ_size] = iTrack_mupl->normalizedChi2();
+        Reco_QQ_mumi_normChi2_inner[Reco_QQ_size] = iTrack_mumi->normalizedChi2();
+        Reco_QQ_mupl_nPixValHits[Reco_QQ_size] = iTrack_mupl->hitPattern().numberOfValidPixelHits();
+        Reco_QQ_mumi_nPixValHits[Reco_QQ_size] = iTrack_mumi->hitPattern().numberOfValidPixelHits();
+        Reco_QQ_mupl_nPixWMea[Reco_QQ_size] = iTrack_mupl->hitPattern().pixelLayersWithMeasurement();
+        Reco_QQ_mumi_nPixWMea[Reco_QQ_size] = iTrack_mumi->hitPattern().pixelLayersWithMeasurement();
+        Reco_QQ_mupl_nTrkWMea[Reco_QQ_size] = iTrack_mupl->hitPattern().trackerLayersWithMeasurement();
+        Reco_QQ_mumi_nTrkWMea[Reco_QQ_size] = iTrack_mumi->hitPattern().trackerLayersWithMeasurement();
         Reco_QQ_mupl_dxy[Reco_QQ_size] = iTrack_mupl->dxy(RefVtx);
         Reco_QQ_mumi_dxy[Reco_QQ_size] = iTrack_mumi->dxy(RefVtx);
         Reco_QQ_mupl_dxyErr[Reco_QQ_size] = iTrack_mupl->dxyError();
@@ -1203,7 +1188,7 @@ void HiOniaAnalyzer::fillTreeJpsi(int iSign, int count) {
     }
 
     TLorentzVector vJpsi = lorentzMomentum(aJpsiCand->p4());
-    new ((*Reco_QQ_4mom)[Reco_QQ_size]) TLorentzVector(vJpsi);
+    new ((*m)[Reco_QQ_size]) TLorentzVector(vJpsi);
 
     if (_useBS) {
         if (aJpsiCand->hasUserFloat("ppdlBS")) {
@@ -1335,14 +1320,10 @@ void HiOniaAnalyzer::fillTreeJpsi(int iSign, int count) {
             // to be fixed
             // double dxysigma = sqrt(track->dxyError()*track->dxyError() +
             // RefVtx_xError*RefVtx_xError+RefVtx_yError*RefVtx_yError);
-            // std::cout << "original: " << dxysigma
-            //                << " better: "  << sqrt( pow(track->dxyError(),2)
-            //                + pow(RefVtx_xError,2) + pow(RefVtx_yError,2) )
-            //                << " ratio: " << dxysigma / sqrt(
-            //                pow(track->dxyError(),2) + pow(RefVtx_xError,2) +
-            //                pow(RefVtx_yError,2) )
-            //                << " best: "
-            //                << std::endl;
+            // std::cout << "original: " << dxysigma << " better: "
+            //           << sqrt( pow(track->dxyError(),2) + pow(RefVtx_xError,2) + pow(RefVtx_yError,2) )
+            //           << " ratio: " << dxysigma / sqrt(pow(track->dxyError(),2) + pow(RefVtx_xError,2) + pow(RefVtx_yError,2) )
+            //           << " best: " << std::endl;
 
             if (track->qualityByName("highPurity") && track->pt() > 0.2 &&
                 fabs(track->eta()) < 2.4 &&
@@ -1395,8 +1376,7 @@ void HiOniaAnalyzer::fillTreeJpsi(int iSign, int count) {
 
 void HiOniaAnalyzer::fillRecoJpsi(int iSign, int count, std::string trigName,
                                   std::string centName) {
-    pat::CompositeCandidate *aJpsiCand =
-        _thePassedCands[iSign].at(count)->clone();
+    pat::CompositeCandidate *aJpsiCand = _thePassedCands[iSign].at(count)->clone();
     aJpsiCand->addUserInt("centBin", centBin);
 
     std::string theLabel = trigName + "_" + centName + "_" + theSign.at(iSign);
@@ -1527,31 +1507,21 @@ void HiOniaAnalyzer::makeCuts(int sign) {
             const pat::CompositeCandidate *cand = &(*it);
             if (fabs(cand->rapidity()) >= etaMax) continue;
 
-            if (!(_isHI) && _muonLessPrimaryVertex &&
-                cand->hasUserData("muonlessPV"))
-                RefVtx =
-                    (*cand->userData<reco::Vertex>("muonlessPV")).position();
-            else if (!_muonLessPrimaryVertex &&
-                     cand->hasUserData("PVwithmuons"))
-                RefVtx =
-                    (*cand->userData<reco::Vertex>("PVwithmuons")).position();
+            if (!(_isHI) && _muonLessPrimaryVertex && cand->hasUserData("muonlessPV"))
+                RefVtx = (*cand->userData<reco::Vertex>("muonlessPV")).position();
+            else if (!_muonLessPrimaryVertex && cand->hasUserData("PVwithmuons"))
+                RefVtx = (*cand->userData<reco::Vertex>("PVwithmuons")).position();
             else {
-                std::cout
-                    << "HiOniaAnalyzer::makeCuts: no PV for muon pair stored"
-                    << std::endl;
+                std::cout << "HiOniaAnalyzer::makeCuts: no PV for muon pair stored" << std::endl;
                 continue;
             }
 
-            if (fabs(RefVtx.Z()) > _iConfig.getParameter<double>("maxAbsZ"))
-                continue;
+            if (fabs(RefVtx.Z()) > _iConfig.getParameter<double>("maxAbsZ")) continue;
 
-            const pat::Muon *muon1 =
-                dynamic_cast<const pat::Muon *>(cand->daughter("muon1"));
-            const pat::Muon *muon2 =
-                dynamic_cast<const pat::Muon *>(cand->daughter("muon2"));
+            const pat::Muon *muon1 = dynamic_cast<const pat::Muon *>(cand->daughter("muon1"));
+            const pat::Muon *muon2 = dynamic_cast<const pat::Muon *>(cand->daughter("muon2"));
 
-            if (fabs(muon1->eta()) >= etaMax || fabs(muon2->eta()) >= etaMax)
-                continue;
+            if (fabs(muon1->eta()) >= etaMax || fabs(muon2->eta()) >= etaMax) continue;
 
             bool thisSign =
                 ((sign == 0 && muon1->charge() + muon2->charge() == 0) ||
@@ -1561,39 +1531,29 @@ void HiOniaAnalyzer::makeCuts(int sign) {
             if (thisSign) {
                 bool muonSelFound = false;
                 if (_muonSel == (std::string)("Glb")) {
-                    if (checkCuts(cand, muon1, muon2,
-                                  &HiOniaAnalyzer::selGlobalMuon,
-                                  &HiOniaAnalyzer::selGlobalMuon)) {
+                    if (checkCuts(cand, muon1, muon2, &HiOniaAnalyzer::selGlobalMuon, &HiOniaAnalyzer::selGlobalMuon)) {
                         _thePassedCats[sign].push_back(Glb_Glb);
                         _thePassedCands[sign].push_back(cand);
                     }
                     muonSelFound = true;
                 }
                 if (_muonSel == (std::string)("GlbTrk")) {
-                    if (checkCuts(cand, muon1, muon2,
-                                  &HiOniaAnalyzer::selGlobalMuon,
-                                  &HiOniaAnalyzer::selGlobalMuon)) {
+                    if (checkCuts(cand, muon1, muon2, &HiOniaAnalyzer::selGlobalMuon, &HiOniaAnalyzer::selGlobalMuon)) {
                         _thePassedCats[sign].push_back(GlbTrk_GlbTrk);
                         _thePassedCands[sign].push_back(cand);
                     }
                     muonSelFound = true;
                 }
                 if (_muonSel == (std::string)("Trk")) {
-                    if (checkCuts(cand, muon1, muon2,
-                                  &HiOniaAnalyzer::selTrackerMuon,
-                                  &HiOniaAnalyzer::selTrackerMuon)) {
+                    if (checkCuts(cand, muon1, muon2, &HiOniaAnalyzer::selTrackerMuon, &HiOniaAnalyzer::selTrackerMuon)) {
                         _thePassedCats[sign].push_back(Trk_Trk);
                         _thePassedCands[sign].push_back(cand);
                     }
                     muonSelFound = true;
                 }
                 if (!muonSelFound) {
-                    std::cout
-                        << "[HiOniaAnalyzer::makeCuts] --- The muon selection: "
-                        << _muonSel
-                        << " is invalid. The supported options are: Glb, "
-                           "GlbTrk and Trk"
-                        << std::endl;
+                    std::cout << "[HiOniaAnalyzer::makeCuts] --- The muon selection: " << _muonSel
+                              << " is invalid. The supported options are: Glb, GlbTrk and Trk" << std::endl;
                 }
             }
         }
@@ -1608,8 +1568,7 @@ bool HiOniaAnalyzer::checkCuts(
     const pat::Muon *muon2,
     bool (HiOniaAnalyzer::*callFunc1)(const pat::Muon *),
     bool (HiOniaAnalyzer::*callFunc2)(const pat::Muon *)) {
-    if (((this->*callFunc1)(muon1) && (this->*callFunc2)(muon2)) &&
-        (!_applycuts || cand->userFloat("vProb") > 0.01))
+    if (((this->*callFunc1)(muon1) && (this->*callFunc2)(muon2)) && (!_applycuts || cand->userFloat("vProb") > 0.01))
         return true;
     else
         return false;
@@ -1632,8 +1591,7 @@ pair<unsigned int, const pat::CompositeCandidate *> HiOniaAnalyzer::theBestQQ(
     return result;
 }
 
-bool HiOniaAnalyzer::isMuonInAccept(const pat::Muon *aMuon,
-                                    const std::string muonType) {
+bool HiOniaAnalyzer::isMuonInAccept(const pat::Muon *aMuon, const std::string muonType) {
     if (muonType == (std::string)("GLB")) {
         return (fabs(aMuon->eta()) < 2.4 &&
                 ((fabs(aMuon->eta()) < 1.2 && aMuon->pt() >= 3.5) ||
@@ -1976,9 +1934,7 @@ void HiOniaAnalyzer::fillRecoMuons(int iCent) {
     int nGoodMuonsNoTrig = 0;
 
     if (collMuonNoTrig.isValid()) {
-        for (std::vector<pat::Muon>::const_iterator it =
-                 collMuonNoTrig->begin();
-             it != collMuonNoTrig->end(); ++it) {
+        for (std::vector<pat::Muon>::const_iterator it = collMuonNoTrig->begin(); it != collMuonNoTrig->end(); ++it) {
             const pat::Muon *muon = &(*it);
 
             if (muon->isGlobalMuon() && selGlobalMuon(muon)) nGoodMuonsNoTrig++;
@@ -2203,244 +2159,137 @@ void HiOniaAnalyzer::InitTree() {
     //
 
     myTree->Branch("Reco_QQ_size", &Reco_QQ_size, "Reco_QQ_size/I");
-    // myTree->Branch("Reco_QQ_type", Reco_QQ_type,
-    //                "Reco_QQ_type[Reco_QQ_size]/I");
-    // myTree->Branch("Reco_QQ_sign", Reco_QQ_sign,
-    //                "Reco_QQ_sign[Reco_QQ_size]/I");
+    // myTree->Branch("Reco_QQ_type", Reco_QQ_type, "Reco_QQ_type[Reco_QQ_size]/I");
+    // myTree->Branch("Reco_QQ_sign", Reco_QQ_sign, "Reco_QQ_sign[Reco_QQ_size]/I");
     myTree->Branch("Reco_QQ_4mom", "TClonesArray", &Reco_QQ_4mom, 32000, 0);
-    // myTree->Branch("Reco_QQ_mupl_4mom", "TClonesArray", &Reco_QQ_mupl_4mom,
-    //                32000, 0);
-    // myTree->Branch("Reco_QQ_mumi_4mom", "TClonesArray", &Reco_QQ_mumi_4mom,
-    //                32000, 0);
-    // myTree->Branch("Reco_QQ_trig", Reco_QQ_trig,
-    //                "Reco_QQ_trig[Reco_QQ_size]/l");
-    // myTree->Branch("Reco_QQ_mupl_trig", Reco_QQ_mupl_trig,
-    //                "Reco_QQ_mupl_trig[Reco_QQ_size]/l");
-    // myTree->Branch("Reco_QQ_mumi_trig", Reco_QQ_mumi_trig,
-    //                "Reco_QQ_mumi_trig[Reco_QQ_size]/l");
-    // myTree->Branch("Reco_QQ_isCowboy", Reco_QQ_isCowboy,
-    //                "Reco_QQ_isCowboy[Reco_QQ_size]/O");
-    // myTree->Branch("Reco_QQ_ctau", Reco_QQ_ctau,
-    //                "Reco_QQ_ctau[Reco_QQ_size]/F");
-    // myTree->Branch("Reco_QQ_ctauErr", Reco_QQ_ctauErr,
-    //                "Reco_QQ_ctauErr[Reco_QQ_size]/F");
-    // myTree->Branch("Reco_QQ_ctau3D", Reco_QQ_ctau3D,
-    //                "Reco_QQ_ctau3D[Reco_QQ_size]/F");
-    // myTree->Branch("Reco_QQ_ctauErr3D", Reco_QQ_ctauErr3D,
-    //                "Reco_QQ_ctauErr3D[Reco_QQ_size]/F");
+    myTree->Branch("Reco_QQ_mupl_4mom", "TClonesArray", &Reco_QQ_mupl_4mom, 32000, 0);
+    myTree->Branch("Reco_QQ_mumi_4mom", "TClonesArray", &Reco_QQ_mumi_4mom, 32000, 0);
+    // myTree->Branch("Reco_QQ_trig", Reco_QQ_trig, "Reco_QQ_trig[Reco_QQ_size]/l");
+    // myTree->Branch("Reco_QQ_mupl_trig", Reco_QQ_mupl_trig, "Reco_QQ_mupl_trig[Reco_QQ_size]/l");
+    // myTree->Branch("Reco_QQ_mumi_trig", Reco_QQ_mumi_trig, "Reco_QQ_mumi_trig[Reco_QQ_size]/l");
+    // myTree->Branch("Reco_QQ_isCowboy", Reco_QQ_isCowboy, "Reco_QQ_isCowboy[Reco_QQ_size]/O");
+    // myTree->Branch("Reco_QQ_ctau", Reco_QQ_ctau, "Reco_QQ_ctau[Reco_QQ_size]/F");
+    // myTree->Branch("Reco_QQ_ctauErr", Reco_QQ_ctauErr, "Reco_QQ_ctauErr[Reco_QQ_size]/F");
+    // myTree->Branch("Reco_QQ_ctau3D", Reco_QQ_ctau3D, "Reco_QQ_ctau3D[Reco_QQ_size]/F");
+    // myTree->Branch("Reco_QQ_ctauErr3D", Reco_QQ_ctauErr3D, "Reco_QQ_ctauErr3D[Reco_QQ_size]/F");
 
     // if (_isMC) {
-    //     myTree->Branch("Reco_QQ_ctauTrue", Reco_QQ_ctauTrue,
-    //                    "Reco_QQ_ctauTrue[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_ctauTrue3D", Reco_QQ_ctauTrue3D,
-    //                    "Reco_QQ_ctauTrue3D[Reco_QQ_size]/F");
+    //     myTree->Branch("Reco_QQ_ctauTrue", Reco_QQ_ctauTrue, "Reco_QQ_ctauTrue[Reco_QQ_size]/F");
+    //     myTree->Branch("Reco_QQ_ctauTrue3D", Reco_QQ_ctauTrue3D, "Reco_QQ_ctauTrue3D[Reco_QQ_size]/F");
     // }
     myTree->Branch("Reco_QQ_VtxProb", Reco_QQ_VtxProb, "Reco_QQ_VtxProb[Reco_QQ_size]/F");
     // myTree->Branch("Reco_QQ_dca", Reco_QQ_dca, "Reco_QQ_dca[Reco_QQ_size]/F");
-    // myTree->Branch("Reco_QQ_MassErr", Reco_QQ_MassErr,
-    //                "Reco_QQ_MassErr[Reco_QQ_size]/F");
+    // myTree->Branch("Reco_QQ_MassErr", Reco_QQ_MassErr, "Reco_QQ_MassErr[Reco_QQ_size]/F");
     myTree->Branch("Reco_QQ_vtx", "TClonesArray", &Reco_QQ_vtx, 32000, 0);
-    // myTree->Branch("Reco_QQ_Ntrk", Reco_QQ_Ntrk,
-    //                "Reco_QQ_Ntrk[Reco_QQ_size]/I");
+    // myTree->Branch("Reco_QQ_Ntrk", Reco_QQ_Ntrk, "Reco_QQ_Ntrk[Reco_QQ_size]/I");
 
-    // if (!_theMinimumFlag) {
-    //     myTree->Branch("Reco_QQ_mupl_SelectionType", Reco_QQ_mupl_SelectionType,
-    //                    "Reco_QQ_mupl_SelectionType[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mumi_SelectionType", Reco_QQ_mumi_SelectionType,
-    //                    "Reco_QQ_mumi_SelectionType[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mupl_isGoodMuon", Reco_QQ_mupl_isGoodMuon,
-    //                    "Reco_QQ_mupl_isGoodMuon[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mumi_isGoodMuon", Reco_QQ_mumi_isGoodMuon,
-    //                    "Reco_QQ_mumi_isGoodMuon[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mupl_highPurity", Reco_QQ_mupl_highPurity,
-    //                    "Reco_QQ_mupl_highPurity[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mumi_highPurity", Reco_QQ_mumi_highPurity,
-    //                    "Reco_QQ_mumi_highPurity[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mupl_TrkMuArb", Reco_QQ_mupl_TrkMuArb,
-    //                    "Reco_QQ_mupl_TrkMuArb[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mumi_TrkMuArb", Reco_QQ_mumi_TrkMuArb,
-    //                    "Reco_QQ_mumi_TrkMuArb[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mupl_TMOneStaTight", Reco_QQ_mupl_TMOneStaTight,
-    //                    "Reco_QQ_mupl_TMOneStaTight[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mumi_TMOneStaTight", Reco_QQ_mumi_TMOneStaTight,
-    //                    "Reco_QQ_mumi_TMOneStaTight[Reco_QQ_size]/O");
-    //     myTree->Branch("Reco_QQ_mupl_nPixValHits", Reco_QQ_mupl_nPixValHits,
-    //                    "Reco_QQ_mupl_nPixValHits[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mumi_nPixValHits", Reco_QQ_mumi_nPixValHits,
-    //                    "Reco_QQ_mumi_nPixValHits[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mupl_nMuValHits", Reco_QQ_mupl_nMuValHits,
-    //                    "Reco_QQ_mupl_nMuValHits[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mumi_nMuValHits", Reco_QQ_mumi_nMuValHits,
-    //                    "Reco_QQ_mumi_nMuValHits[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mupl_nTrkHits", Reco_QQ_mupl_nTrkHits,
-    //                    "Reco_QQ_mupl_nTrkHits[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mumi_nTrkHits", Reco_QQ_mumi_nTrkHits,
-    //                    "Reco_QQ_mumi_nTrkHits[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mupl_normChi2_inner",
-    //                    Reco_QQ_mupl_normChi2_inner,
-    //                    "Reco_QQ_mupl_normChi2_inner[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_normChi2_inner",
-    //                    Reco_QQ_mumi_normChi2_inner,
-    //                    "Reco_QQ_mumi_normChi2_inner[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_normChi2_global",
-    //                    Reco_QQ_mupl_normChi2_global,
-    //                    "Reco_QQ_mupl_normChi2_global[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_normChi2_global",
-    //                    Reco_QQ_mumi_normChi2_global,
-    //                    "Reco_QQ_mumi_normChi2_global[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_nPixWMea", Reco_QQ_mupl_nPixWMea,
-    //                    "Reco_QQ_mupl_nPixWMea[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mumi_nPixWMea", Reco_QQ_mumi_nPixWMea,
-    //                    "Reco_QQ_mumi_nPixWMea[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mupl_nTrkWMea", Reco_QQ_mupl_nTrkWMea,
-    //                    "Reco_QQ_mupl_nTrkWMea[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mumi_nTrkWMea", Reco_QQ_mumi_nTrkWMea,
-    //                    "Reco_QQ_mumi_nTrkWMea[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mupl_StationsMatched",
-    //                    Reco_QQ_mupl_StationsMatched,
-    //                    "Reco_QQ_mupl_StationsMatched[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mumi_StationsMatched",
-    //                    Reco_QQ_mumi_StationsMatched,
-    //                    "Reco_QQ_mumi_StationsMatched[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_mupl_dxy", Reco_QQ_mupl_dxy,
-    //                    "Reco_QQ_mupl_dxy[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_dxy", Reco_QQ_mumi_dxy,
-    //                    "Reco_QQ_mumi_dxy[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_dxyErr", Reco_QQ_mupl_dxyErr,
-    //                    "Reco_QQ_mupl_dxyErr[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_dxyErr", Reco_QQ_mumi_dxyErr,
-    //                    "Reco_QQ_mumi_dxyErr[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_dz", Reco_QQ_mupl_dz,
-    //                    "Reco_QQ_mupl_dz[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_dz", Reco_QQ_mumi_dz,
-    //                    "Reco_QQ_mumi_dz[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_dzErr", Reco_QQ_mupl_dzErr,
-    //                    "Reco_QQ_mupl_dzErr[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_dzErr", Reco_QQ_mumi_dzErr,
-    //                    "Reco_QQ_mumi_dzErr[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_pt_inner", Reco_QQ_mupl_pt_inner,
-    //                    "Reco_QQ_mupl_pt_inner[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_pt_inner", Reco_QQ_mumi_pt_inner,
-    //                    "Reco_QQ_mumi_pt_inner[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_pt_global", Reco_QQ_mupl_pt_global,
-    //                    "Reco_QQ_mupl_pt_global[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_pt_global", Reco_QQ_mumi_pt_global,
-    //                    "Reco_QQ_mumi_pt_global[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_ptErr_inner", Reco_QQ_mupl_ptErr_inner,
-    //                    "Reco_QQ_mupl_ptErr_inner[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_ptErr_inner", Reco_QQ_mumi_ptErr_inner,
-    //                    "Reco_QQ_mumi_ptErr_inner[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mupl_ptErr_global", Reco_QQ_mupl_ptErr_global,
-    //                    "Reco_QQ_mupl_ptErr_global[Reco_QQ_size]/F");
-    //     myTree->Branch("Reco_QQ_mumi_ptErr_global", Reco_QQ_mumi_ptErr_global,
-    //                    "Reco_QQ_mumi_ptErr_global[Reco_QQ_size]/F");
-    // }
+    if (!_theMinimumFlag) {
+        myTree->Branch("Reco_QQ_mupl_SelectionType", Reco_QQ_mupl_SelectionType, "Reco_QQ_mupl_SelectionType[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mumi_SelectionType", Reco_QQ_mumi_SelectionType, "Reco_QQ_mumi_SelectionType[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mupl_isGoodMuon", Reco_QQ_mupl_isGoodMuon, "Reco_QQ_mupl_isGoodMuon[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mumi_isGoodMuon", Reco_QQ_mumi_isGoodMuon, "Reco_QQ_mumi_isGoodMuon[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mupl_highPurity", Reco_QQ_mupl_highPurity, "Reco_QQ_mupl_highPurity[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mumi_highPurity", Reco_QQ_mumi_highPurity, "Reco_QQ_mumi_highPurity[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mupl_TrkMuArb", Reco_QQ_mupl_TrkMuArb, "Reco_QQ_mupl_TrkMuArb[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mumi_TrkMuArb", Reco_QQ_mumi_TrkMuArb, "Reco_QQ_mumi_TrkMuArb[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mupl_TMOneStaTight", Reco_QQ_mupl_TMOneStaTight, "Reco_QQ_mupl_TMOneStaTight[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mumi_TMOneStaTight", Reco_QQ_mumi_TMOneStaTight, "Reco_QQ_mumi_TMOneStaTight[Reco_QQ_size]/O");
+        myTree->Branch("Reco_QQ_mupl_nPixValHits", Reco_QQ_mupl_nPixValHits, "Reco_QQ_mupl_nPixValHits[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mumi_nPixValHits", Reco_QQ_mumi_nPixValHits, "Reco_QQ_mumi_nPixValHits[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mupl_nMuValHits", Reco_QQ_mupl_nMuValHits, "Reco_QQ_mupl_nMuValHits[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mumi_nMuValHits", Reco_QQ_mumi_nMuValHits, "Reco_QQ_mumi_nMuValHits[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mupl_nTrkHits", Reco_QQ_mupl_nTrkHits, "Reco_QQ_mupl_nTrkHits[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mumi_nTrkHits", Reco_QQ_mumi_nTrkHits, "Reco_QQ_mumi_nTrkHits[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mupl_normChi2_inner", Reco_QQ_mupl_normChi2_inner, "Reco_QQ_mupl_normChi2_inner[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_normChi2_inner", Reco_QQ_mumi_normChi2_inner, "Reco_QQ_mumi_normChi2_inner[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_normChi2_global", Reco_QQ_mupl_normChi2_global, "Reco_QQ_mupl_normChi2_global[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_normChi2_global", Reco_QQ_mumi_normChi2_global, "Reco_QQ_mumi_normChi2_global[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_nPixWMea", Reco_QQ_mupl_nPixWMea, "Reco_QQ_mupl_nPixWMea[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mumi_nPixWMea", Reco_QQ_mumi_nPixWMea, "Reco_QQ_mumi_nPixWMea[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mupl_nTrkWMea", Reco_QQ_mupl_nTrkWMea, "Reco_QQ_mupl_nTrkWMea[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mumi_nTrkWMea", Reco_QQ_mumi_nTrkWMea, "Reco_QQ_mumi_nTrkWMea[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mupl_StationsMatched", Reco_QQ_mupl_StationsMatched, "Reco_QQ_mupl_StationsMatched[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mumi_StationsMatched", Reco_QQ_mumi_StationsMatched, "Reco_QQ_mumi_StationsMatched[Reco_QQ_size]/I");
+        myTree->Branch("Reco_QQ_mupl_dxy", Reco_QQ_mupl_dxy, "Reco_QQ_mupl_dxy[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_dxy", Reco_QQ_mumi_dxy, "Reco_QQ_mumi_dxy[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_dxyErr", Reco_QQ_mupl_dxyErr, "Reco_QQ_mupl_dxyErr[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_dxyErr", Reco_QQ_mumi_dxyErr, "Reco_QQ_mumi_dxyErr[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_dz", Reco_QQ_mupl_dz, "Reco_QQ_mupl_dz[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_dz", Reco_QQ_mumi_dz, "Reco_QQ_mumi_dz[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_dzErr", Reco_QQ_mupl_dzErr, "Reco_QQ_mupl_dzErr[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_dzErr", Reco_QQ_mumi_dzErr, "Reco_QQ_mumi_dzErr[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_pt_inner", Reco_QQ_mupl_pt_inner, "Reco_QQ_mupl_pt_inner[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_pt_inner", Reco_QQ_mumi_pt_inner, "Reco_QQ_mumi_pt_inner[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_pt_global", Reco_QQ_mupl_pt_global, "Reco_QQ_mupl_pt_global[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_pt_global", Reco_QQ_mumi_pt_global, "Reco_QQ_mumi_pt_global[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_ptErr_inner", Reco_QQ_mupl_ptErr_inner, "Reco_QQ_mupl_ptErr_inner[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_ptErr_inner", Reco_QQ_mumi_ptErr_inner, "Reco_QQ_mumi_ptErr_inner[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mupl_ptErr_global", Reco_QQ_mupl_ptErr_global, "Reco_QQ_mupl_ptErr_global[Reco_QQ_size]/F");
+        myTree->Branch("Reco_QQ_mumi_ptErr_global", Reco_QQ_mumi_ptErr_global, "Reco_QQ_mumi_ptErr_global[Reco_QQ_size]/F");
+    }
 
     // myTree->Branch("Reco_mu_size", &Reco_mu_size, "Reco_mu_size/I");
-    // myTree->Branch("Reco_mu_type", Reco_mu_type,
-    //                "Reco_mu_type[Reco_mu_size]/I");
-    // myTree->Branch("Reco_mu_SelectionType", Reco_mu_SelectionType,
-    //                "Reco_mu_SelectionType[Reco_mu_size]/I");
-    // myTree->Branch("Reco_mu_charge", Reco_mu_charge,
-    //                "Reco_mu_charge[Reco_mu_size]/I");
+    // myTree->Branch("Reco_mu_type", Reco_mu_type, "Reco_mu_type[Reco_mu_size]/I");
+    // myTree->Branch("Reco_mu_SelectionType", Reco_mu_SelectionType, "Reco_mu_SelectionType[Reco_mu_size]/I");
+    // myTree->Branch("Reco_mu_charge", Reco_mu_charge, "Reco_mu_charge[Reco_mu_size]/I");
     // myTree->Branch("Reco_mu_4mom", "TClonesArray", &Reco_mu_4mom, 32000, 0);
-    // myTree->Branch("Reco_mu_trig", Reco_mu_trig,
-    //                "Reco_mu_trig[Reco_mu_size]/l");
+    // myTree->Branch("Reco_mu_trig", Reco_mu_trig, "Reco_mu_trig[Reco_mu_size]/l");
 
     // if (_useGeTracks && _fillRecoTracks) {
-    //     myTree->Branch("Reco_QQ_NtrkPt02", Reco_QQ_NtrkPt02,
-    //                    "Reco_QQ_NtrkPt02[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_NtrkPt03", Reco_QQ_NtrkPt03,
-    //                    "Reco_QQ_NtrkPt03[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_NtrkPt04", Reco_QQ_NtrkPt04,
-    //                    "Reco_QQ_NtrkPt04[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_NtrkDeltaR03", Reco_QQ_NtrkDeltaR03,
-    //                    "Reco_QQ_NtrkDeltaR03[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_NtrkDeltaR04", Reco_QQ_NtrkDeltaR04,
-    //                    "Reco_QQ_NtrkDeltaR04[Reco_QQ_size]/I");
-    //     myTree->Branch("Reco_QQ_NtrkDeltaR05", Reco_QQ_NtrkDeltaR05,
-    //                    "Reco_QQ_NtrkDeltaR05[Reco_QQ_size]/I");
+    //     myTree->Branch("Reco_QQ_NtrkPt02", Reco_QQ_NtrkPt02, "Reco_QQ_NtrkPt02[Reco_QQ_size]/I");
+    //     myTree->Branch("Reco_QQ_NtrkPt03", Reco_QQ_NtrkPt03, "Reco_QQ_NtrkPt03[Reco_QQ_size]/I");
+    //     myTree->Branch("Reco_QQ_NtrkPt04", Reco_QQ_NtrkPt04, "Reco_QQ_NtrkPt04[Reco_QQ_size]/I");
+    //     myTree->Branch("Reco_QQ_NtrkDeltaR03", Reco_QQ_NtrkDeltaR03, "Reco_QQ_NtrkDeltaR03[Reco_QQ_size]/I");
+    //     myTree->Branch("Reco_QQ_NtrkDeltaR04", Reco_QQ_NtrkDeltaR04, "Reco_QQ_NtrkDeltaR04[Reco_QQ_size]/I");
+    //     myTree->Branch("Reco_QQ_NtrkDeltaR05", Reco_QQ_NtrkDeltaR05, "Reco_QQ_NtrkDeltaR05[Reco_QQ_size]/I");
 
     //     myTree->Branch("Reco_trk_size", &Reco_trk_size, "Reco_trk_size/I");
-    //     myTree->Branch("Reco_trk_charge", Reco_trk_charge,
-    //                    "Reco_trk_charge[Reco_trk_size]/I");
-    //     myTree->Branch("Reco_isgoodTrk", Reco_isgoodTrk,
-    //                    "Reco_isgoodTrk[Reco_trk_size]/O");
-    //     myTree->Branch("Reco_isMuTrk", Reco_isMuTrk,
-    //                    "Reco_isMuTrk[Reco_trk_size]/O");
-    //     myTree->Branch("Reco_trk_4mom", "TClonesArray", &Reco_trk_4mom, 32000,
-    //                    0);
+    //     myTree->Branch("Reco_trk_charge", Reco_trk_charge, "Reco_trk_charge[Reco_trk_size]/I");
+    //     myTree->Branch("Reco_isgoodTrk", Reco_isgoodTrk, "Reco_isgoodTrk[Reco_trk_size]/O");
+    //     myTree->Branch("Reco_isMuTrk", Reco_isMuTrk, "Reco_isMuTrk[Reco_trk_size]/O");
+    //     myTree->Branch("Reco_trk_4mom", "TClonesArray", &Reco_trk_4mom, 32000, 0);
     //     myTree->Branch("Reco_trk_vtx", "TClonesArray", &Reco_trk_vtx, 32000, 0);
-    //     myTree->Branch("Reco_trk_dxyError", Reco_trk_dxyError,
-    //                    "Reco_trk_dxyError[Reco_trk_size]/F");
-    //     myTree->Branch("Reco_trk_dzError", Reco_trk_dzError,
-    //                    "Reco_trk_dzError[Reco_trk_size]/F");
+    //     myTree->Branch("Reco_trk_dxyError", Reco_trk_dxyError, "Reco_trk_dxyError[Reco_trk_size]/F");
+    //     myTree->Branch("Reco_trk_dzError", Reco_trk_dzError, "Reco_trk_dzError[Reco_trk_size]/F");
     // }
 
     // if (!_theMinimumFlag) {
-    //     myTree->Branch("Reco_mu_isGoodMuon", Reco_mu_isGoodMuon,
-    //                    "Reco_mu_isGoodMuon[Reco_mu_size]/O");
-    //     myTree->Branch("Reco_mu_highPurity", Reco_mu_highPurity,
-    //                    "Reco_mu_highPurity[Reco_mu_size]/O");
-    //     myTree->Branch("Reco_mu_TrkMuArb", Reco_mu_TrkMuArb,
-    //                    "Reco_mu_TrkMuArb[Reco_mu_size]/O");
-    //     myTree->Branch("Reco_mu_TMOneStaTight", Reco_mu_TMOneStaTight,
-    //                    "Reco_mu_TMOneStaTight[Reco_mu_size]/O");
-    //     myTree->Branch("Reco_mu_nPixValHits", Reco_mu_nPixValHits,
-    //                    "Reco_mu_nPixValHits[Reco_mu_size]/I");
-    //     myTree->Branch("Reco_mu_nMuValHits", Reco_mu_nMuValHits,
-    //                    "Reco_mu_nMuValHits[Reco_mu_size]/I");
-    //     myTree->Branch("Reco_mu_nTrkHits", Reco_mu_nTrkHits,
-    //                    "Reco_mu_nTrkHits[Reco_mu_size]/I");
-    //     myTree->Branch("Reco_mu_normChi2_inner", Reco_mu_normChi2_inner,
-    //                    "Reco_mu_normChi2_inner[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_normChi2_global", Reco_mu_normChi2_global,
-    //                    "Reco_mu_normChi2_global[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_nPixWMea", Reco_mu_nPixWMea,
-    //                    "Reco_mu_nPixWMea[Reco_mu_size]/I");
-    //     myTree->Branch("Reco_mu_nTrkWMea", Reco_mu_nTrkWMea,
-    //                    "Reco_mu_nTrkWMea[Reco_mu_size]/I");
-    //     myTree->Branch("Reco_mu_StationsMatched", Reco_mu_StationsMatched,
-    //                    "Reco_mu_StationsMatched[Reco_mu_size]/I");
-    //     myTree->Branch("Reco_mu_dxy", Reco_mu_dxy,
-    //                    "Reco_mu_dxy[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_dxyErr", Reco_mu_dxyErr,
-    //                    "Reco_mu_dxyErr[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_isGoodMuon", Reco_mu_isGoodMuon, "Reco_mu_isGoodMuon[Reco_mu_size]/O");
+    //     myTree->Branch("Reco_mu_highPurity", Reco_mu_highPurity, "Reco_mu_highPurity[Reco_mu_size]/O");
+    //     myTree->Branch("Reco_mu_TrkMuArb", Reco_mu_TrkMuArb, "Reco_mu_TrkMuArb[Reco_mu_size]/O");
+    //     myTree->Branch("Reco_mu_TMOneStaTight", Reco_mu_TMOneStaTight, "Reco_mu_TMOneStaTight[Reco_mu_size]/O");
+    //     myTree->Branch("Reco_mu_nPixValHits", Reco_mu_nPixValHits, "Reco_mu_nPixValHits[Reco_mu_size]/I");
+    //     myTree->Branch("Reco_mu_nMuValHits", Reco_mu_nMuValHits, "Reco_mu_nMuValHits[Reco_mu_size]/I");
+    //     myTree->Branch("Reco_mu_nTrkHits", Reco_mu_nTrkHits, "Reco_mu_nTrkHits[Reco_mu_size]/I");
+    //     myTree->Branch("Reco_mu_normChi2_inner", Reco_mu_normChi2_inner, "Reco_mu_normChi2_inner[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_normChi2_global", Reco_mu_normChi2_global, "Reco_mu_normChi2_global[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_nPixWMea", Reco_mu_nPixWMea, "Reco_mu_nPixWMea[Reco_mu_size]/I");
+    //     myTree->Branch("Reco_mu_nTrkWMea", Reco_mu_nTrkWMea, "Reco_mu_nTrkWMea[Reco_mu_size]/I");
+    //     myTree->Branch("Reco_mu_StationsMatched", Reco_mu_StationsMatched, "Reco_mu_StationsMatched[Reco_mu_size]/I");
+    //     myTree->Branch("Reco_mu_dxy", Reco_mu_dxy, "Reco_mu_dxy[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_dxyErr", Reco_mu_dxyErr, "Reco_mu_dxyErr[Reco_mu_size]/F");
     //     myTree->Branch("Reco_mu_dz", Reco_mu_dz, "Reco_mu_dz[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_dzErr", Reco_mu_dzErr,
-    //                    "Reco_mu_dzErr[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_pt_inner", Reco_mu_pt_inner,
-    //                    "Reco_mu_pt_inner[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_pt_global", Reco_mu_pt_global,
-    //                    "Reco_mu_pt_global[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_ptErr_inner", Reco_mu_ptErr_inner,
-    //                    "Reco_mu_ptErr_inner[Reco_mu_size]/F");
-    //     myTree->Branch("Reco_mu_ptErr_global", Reco_mu_ptErr_global,
-    //                    "Reco_mu_ptErr_global[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_dzErr", Reco_mu_dzErr, "Reco_mu_dzErr[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_pt_inner", Reco_mu_pt_inner, "Reco_mu_pt_inner[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_pt_global", Reco_mu_pt_global, "Reco_mu_pt_global[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_ptErr_inner", Reco_mu_ptErr_inner, "Reco_mu_ptErr_inner[Reco_mu_size]/F");
+    //     myTree->Branch("Reco_mu_ptErr_global", Reco_mu_ptErr_global, "Reco_mu_ptErr_global[Reco_mu_size]/F");
     // }
 
     // if (_isMC) {
     //     myTree->Branch("Gen_QQ_size", &Gen_QQ_size, "Gen_QQ_size/I");
-    //     myTree->Branch("Gen_QQ_type", Gen_QQ_type,
-    //                    "Gen_QQ_type[Gen_QQ_size]/I");
+    //     myTree->Branch("Gen_QQ_type", Gen_QQ_type, "Gen_QQ_type[Gen_QQ_size]/I");
     //     myTree->Branch("Gen_QQ_4mom", "TClonesArray", &Gen_QQ_4mom, 32000, 0);
-    //     myTree->Branch("Gen_QQ_momId", Gen_QQ_momId,
-    //                    "Gen_QQ_momId[Gen_QQ_size]/I");
-    //     myTree->Branch("Gen_QQ_ctau", Gen_QQ_ctau,
-    //                    "Gen_QQ_ctau[Gen_QQ_size]/F");
-    //     myTree->Branch("Gen_QQ_ctau3D", Gen_QQ_ctau3D,
-    //                    "Gen_QQ_ctau3D[Gen_QQ_size]/F");
-    //     myTree->Branch("Gen_QQ_mupl_4mom", "TClonesArray", &Gen_QQ_mupl_4mom,
-    //                    32000, 0);
-    //     myTree->Branch("Gen_QQ_mumi_4mom", "TClonesArray", &Gen_QQ_mumi_4mom,
-    //                    32000, 0);
+    //     myTree->Branch("Gen_QQ_momId", Gen_QQ_momId, "Gen_QQ_momId[Gen_QQ_size]/I");
+    //     myTree->Branch("Gen_QQ_ctau", Gen_QQ_ctau, "Gen_QQ_ctau[Gen_QQ_size]/F");
+    //     myTree->Branch("Gen_QQ_ctau3D", Gen_QQ_ctau3D, "Gen_QQ_ctau3D[Gen_QQ_size]/F");
+    //     myTree->Branch("Gen_QQ_mupl_4mom", "TClonesArray", &Gen_QQ_mupl_4mom, 32000, 0);
+    //     myTree->Branch("Gen_QQ_mumi_4mom", "TClonesArray", &Gen_QQ_mumi_4mom, 32000, 0);
     //     myTree->Branch("Gen_QQ_vtx", "TClonesArray", &Gen_QQ_vtx, 32000, 0);
 
     //     myTree->Branch("Gen_mu_size", &Gen_mu_size, "Gen_mu_size/I");
-    //     myTree->Branch("Gen_mu_type", Gen_mu_type,
-    //                    "Gen_mu_type[Gen_mu_size]/I");
-    //     myTree->Branch("Gen_mu_charge", Gen_mu_charge,
-    //                    "Gen_mu_charge[Gen_mu_size]/I");
+    //     myTree->Branch("Gen_mu_type", Gen_mu_type, "Gen_mu_type[Gen_mu_size]/I");
+    //     myTree->Branch("Gen_mu_charge", Gen_mu_charge, "Gen_mu_charge[Gen_mu_size]/I");
     //     myTree->Branch("Gen_mu_4mom", "TClonesArray", &Gen_mu_4mom, 32000, 0);
 
     //     myTree->Branch("Gen_trk_size", &Gen_trk_size, "Gen_trk_size/I");
