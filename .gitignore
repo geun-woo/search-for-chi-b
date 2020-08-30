@@ -1,3 +1,6 @@
 *.pyc
 *.root
+*.log
 .vscode/
+HiAnalysis/HiOnia/test/crab_chi_b_analysis_Pbp/
+HiAnalysis/HiOnia/test/crab_chi_b_analysis_pPb/
